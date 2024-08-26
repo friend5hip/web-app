@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+    <style>
+            /* CSS reset */
+            *{margin: 0; padding: 0;} /* 전체 선택자 */
+            a:link, a:visited{text-decoration: none; color: black;} /* 후위 선택자 */
+            li{list-style: none;}
+            table{  
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            /* .menu li {float: left;} */
+            .boxWrap{
+                background: blue;
+                width: 90%;
+            }
+            .box{
+                background: skyblue url() center;
+                width: 50%;
+            }
+    </style>
+</head>
+<body>
+    <h1>test</h1>
+    <a href="http://www.naver.com">naver</a>
+    <ul class="menu">
+        <li>test</li>
+        <li>test</li>
+    </ul>
+    <table border="1">
+        <tr>
+            <td>1</td>
+        </tr>
+    </table>
+    <div class="boxWrap">
+        <div class="box">
+            hello
+        </div>
+    </div>
+</body>
+</html>

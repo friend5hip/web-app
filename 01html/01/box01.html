@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic layout</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{margin: 0; padding: 0;}
+        a:link, a:visited{text-decoration: none;}
+        ul, li{list-style: none;}
+        .box{
+            /* background-color: skyblue; */
+            /* height: 50px; */
+            /* display: inline-block; */
+            margin: 10px;
+            padding: 10px;
+        }
+        .menuWrap{
+            background-color: blue;
+            /* height: 50px; */
+        }
+        ul.menu{
+            width: 1360px;
+            margin: 0 auto; /* 가운데 정렬: block 단위여야 하고 width 값이 있어야 함 */
+        }
+        ul.menu:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        ul.menu > li{
+            float: left;
+            width: 25%;
+            background-color: pink;
+        }
+        ul.menu a{
+            background-color: skyblue;
+            display: block;
+            width: 100%;
+            line-height: 100px;
+            text-align: center;
+        }
+        ul.menu a:hover{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box">test</div> -->
+    <div class="menuWrap">  <!-- 100% -->
+        <ul class="menu">   <!-- 1360px -->
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+        </ul>
+    </div>
+    <!-- <style>
+        .box1{
+            background-color: blue;
+        }
+    </style>
+    <div class="box1"></div> -->
+    <style>
+        .box2{
+            border: 1px solid #000;
+            display: inline-block;
+        }
+        .box2:before{
+            content: "before "
+        }
+        .box2:after{
+            content: "after"
+        }
+    </style>
+    <div class="box2">
+        <!-- .box2:before -->
+        안녕하세요
+        <!-- .box2:after -->
+    </div>
+    <style>
+        .title{
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .title:after, .title:before{
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: black;
+            margin: 10px auto;
+        }
+        .content_text{
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+    <h2 class="title">title1</h2>
+    <p class="content_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eius vitae maxime? Quasi facilis ad nisi itaque quia ea quisquam autem sunt, cumque ducimus sapiente possimus earum consequuntur aperiam qui!</p>
+</body>
+</html>
