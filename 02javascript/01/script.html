@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+</head>
+<body>
+    <button onclick="alert('Test')">Click</button>
+    <br>
+    <script>
+        console.log("hello")
+
+        var day;
+        var week = new Date().getDay();
+        console.log(week);
+        switch(week) {
+            case 0: 
+                day = "일요일" 
+                break;
+            case 1: 
+                day = "월요일" 
+                break;
+            case 2: 
+                day = "화요일" 
+                break;
+            case 3: 
+                day = "수요일" 
+                break;
+            case 4: 
+                day = "목요일" 
+                break;
+            case 5: 
+                day = "금요일" 
+                break;
+            case 6: 
+                day = "토요일" 
+                break;
+            }
+        document.write(`오늘은 ${day}입니다.<br>`);
+
+        var city = ['서울', '인천', '안산'];
+        function printArr() {
+            for (var i = 0; i < city.length; i++) {
+                document.write(`${city[i]}<br>`);
+            }
+        }
+        printArr();
+
+        function printArr2(item, i) {
+            document.write("배열 데이터 [" + i + "] : " + item + "<br>");
+        }
+        city.forEach(printArr2);
+        
+        city.forEach(function(item, i) {
+            document.write("배열 데이터 [" + i + "] : " + item + "<br>");
+        })
+
+        var data = [1, 2, 3, 4, 5, 6];
+        function mapArr(value) {
+            return value * value;
+        }
+        var mapData = data.map(mapArr);
+        document.write(mapData + "<br>");
+
+        function fillterArr(value) {
+            return value > 3;
+        }
+        var fdata = data.filter(fillterArr);
+        document.write(fdata);
+    </script>
+    <!-- 객체 생성 -->
+    <p id="var1"></p>
+    <p id="var2" class="var2"></p>
+    <p id="var3" class="var2"></p>
+    <script>
+        var car = {
+            name: 'Sonata', // value에는 함수가 들어올 수 있음.
+            speed: 100,
+            color: 'white'
+        }
+        document.getElementById('var1').innerHTML = car.name;
+        // $("#var1").html(car.name);  // jQuery 방식
+        document.getElementsByClassName('var2')[0].innerHTML = car.speed;
+        document.getElementById('var1').innerHTML = car.name;
+    </script>
+    <!-- 객체 속성 변경 -->
+    <style>
+        .box{width: 100px; height: 100px; background-color: skyblue; transition: 0.3s;}
+    </style>
+    <div class="box"></div>
+    <script>
+        function boxChange() {
+            document.getElementsByClassName('box')[0].style.backgroundColor = 'red';
+            document.getElementsByClassName('box')[0].style.width = '0px';
+            document.getElementsByClassName('box')[0].style.width = '0px';
+            // document.getElementsByClassName('box')[0].style.display = 'none';
+        }
+    </script>
+    <button onclick="boxChange()">
+        Change
+    </button>
+</body>
+</html>

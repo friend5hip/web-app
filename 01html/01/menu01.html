@@ -72,7 +72,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-repeat: no-repeat; /* 배경 반복 제거 */
+            background-size: cover;
         }
+        .visual .item.st1 {
+            background-image: url(./images/banner01.jpg);
+        }
+        .visual .item.st2 {
+            background-image: url(./images/banner02.jpg);
+        }
+        .visual .item.st3 {
+            background-image: url(./images/banner03.jpg);
+        }
+        .visual .item .textWrap {
+            width: 1360px;
+            padding-left: 20px;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        /* common */
+        .mb10 {margin-bottom: 10px !important}
+        .mb20 {margin-bottom: 20px !important}
     </style>
 </head>
 <body>
@@ -93,16 +113,22 @@
     <div class="visual">
        <ul class="slide">
             <li class="item st1">
-                TEST1
-                <!-- <img src="./images/banner01.jpg" alt=""> -->
+                <div class="textWrap">
+                    <h2 class="mb10">Lorem, ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Veniam, aut.</p>
+                </div>
             </li>
             <li class="item st2">
-                TEST2
-                <!-- <img src="./images/banner02.jpg" alt=""> -->
+                <div class="textWrap">
+                    <h2 class="mb10">Lorem, ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Veniam, aut.</p>
+                </div>
             </li>
             <li class="item st3">
-                TEST3
-                <!-- <img src="./images/banner03.jpg" alt=""> -->
+                <div class="textWrap">
+                    <h2 class="mb10">Lorem, ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, <br>adipisicing elit. Veniam, aut.</p>
+                </div>
             </li>
        </ul> 
     </div>
@@ -110,7 +136,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.min.js" integrity="sha512-LaBO0tZh1+6Ebk+EnHt/WsGM0UnmkCXfQ1rfhGmpa5MXUdslNuSSELBRcteHKz4k4ny+Op10Ax2fPoTNq+VcUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(".slide").bxSlider({
-            mode: 'vertical'
+            auto: true
         });
     </script>
 </body>
