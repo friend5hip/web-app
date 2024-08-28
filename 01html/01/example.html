@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.css" integrity="sha512-rV4fiystTwIvs71MLqeLbKbzosmgDS7VU5Xqk1IwFitAM+Aa9x/8Xil4CW+9DjOvVle2iqg4Ncagsbgu2MWxKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .bx-wrapper {
+            -moz-box-shadow: 0 0 5px #ccc;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 0 none;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="hd">
+        <div class="container menuWrap"> <!-- 1360px -->
+            <h1 class="logo">logo</h1>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                </ul>
+            </nav>
+            <!-- <ul class="sns">
+                <li><i class="fa-brands fa-facebook-f"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+            </ul> -->
+        </div>
+    </header>
+    <div class="visual">
+        <div class="slide">
+            <img class="slideImg" src="./images/image02.jpg" alt="">
+            <img class="slideImg" src="./images/image04.jpg" alt="">
+            <img class="slideImg" src="./images/image05.jpg" alt="">
+        </div>
+    </div>
+    <div class="container intersect">
+        <div class="textWrap01">
+            <p>Lorem ipsum dolor sit amet,
+            <br>consectetur adipisicing.</p>
+        </div>
+    </div>
+    <div class="container intersect2">
+        <div class="textWrap02">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, consequatur?
+            </br>Minima, odit. Tenetur nostrum cumque ullam suscipit?</p>
+        </div>        
+    </div>
+    <div class="container banner">
+        <div class="card">  <!-- 384 * 500 -->
+            <div class="imgWrap">
+                <img src="./images/image01.jpg" alt="">
+            </div>
+            <div class="cardText">
+                <h3><a href="#">Lorem ipsum dolor sit.</a></h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, nostrum.</p> 
+            </div>
+        </div>
+        <div class="card">  <!-- 384 * 500 -->
+            <div class="imgWrap">
+                <img src="./images/image01.jpg" alt="">
+            </div>
+            <div class="cardText">
+                <h3>Lorem ipsum dolor sit.</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, nostrum.</p>
+            </div>
+        </div>
+        <div class="card">  <!-- 384 * 500 -->
+            <div class="imgWrap">
+                <img src="./images/image01.jpg" alt="">
+            </div>
+            <div class="cardText">
+                <h3>Lorem ipsum dolor sit.</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, nostrum.</p>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 20px 0">
+        <div class="container sec1st">
+            <div class="textWrap03">
+                <h1>Lorem ipsum dolor sit
+                <br>amet consectetur.</h1>
+                <p>Lorem, ipsum.<p>
+            </div>
+            <img class="img1" src="./images/image03.png" alt="">
+        </div>
+    </div>
+    <section class="mainNotice">
+        <div class="container noticeArea">
+            <div class="subArea">
+                <p class="title">Title</p>
+            </div>
+            <div class="tabArea">
+                <button class="button on">Button</button>
+                <button class="button">Button</button>
+                <button class="button">Button</button>
+            </div>
+        </div>
+    </section>
+    <div class="top"></div>
+    <footer class="ft">
+        <div class="ftInner">
+            <p class="logo">logo</p>
+            <p class="copyright">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, consequuntur.</p>
+        </div>
+    </footer>
+    <script src="./js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.min.js" integrity="sha512-LaBO0tZh1+6Ebk+EnHt/WsGM0UnmkCXfQ1rfhGmpa5MXUdslNuSSELBRcteHKz4k4ny+Op10Ax2fPoTNq+VcUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(".slide").bxSlider({
+            auto: true,
+            pager: false,
+            controls: false
+        });
+    </script>
+</body>
+</html>
