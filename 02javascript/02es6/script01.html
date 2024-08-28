@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const obj = function() {
+        //     console.log("hello world")
+        // }
+
+        // arrow function
+        const obj = (x, y) => {
+            while (y != 0) {
+                let r = x % y;
+                x = y;
+                y = r;
+            }
+            return x;
+        }
+        console.log(obj(60, 18));
+
+        // reference type example
+        const a = [1, 2, 3];
+        const b = [...a];
+        b[0] = 10
+        console.log("b: " + b);
+        console.log("a: " + a);
+
+        // for..of example
+        for(const item of a) {
+            console.log(item);
+        }
+    </script>
+</body>
+</html>

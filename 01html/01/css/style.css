@@ -1,7 +1,12 @@
 @charset "utf-8";
 
+body {
+    height: 300vh;
+    font-family: "Noto Sans KR", sans-serif;
+}
 .container {
-    width: 1360px;
+    min-width: 1280px;
+    width: 1280px;
     margin: 0 auto;
 }
 .bg-gray {
@@ -13,19 +18,28 @@
 .bg-sky {
     background-color: skyblue !important;
 }
+.bg-black {
+    background-color: black !important;
+}
 .hd {
-    box-sizing: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 99999;
 }
 .menuWrap {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
     padding: 10px 0;
 }
 .menuWrap .gnb ul {
     display: flex;
 }
 .menuWrap .gnb ul li {
+    display: flex;
+    /* justify-content: space-around; */
     width: 150px;
     height: 50px;
 }
@@ -34,6 +48,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
+    font-weight: 700;
 }
 .menuWrap .sns {
     display: flex;
@@ -54,5 +70,170 @@
     font-weight: bold;
 }
 .visual {
+    /* background-color: skyblue; */
+    min-width: 1280px;
+    margin-bottom: 200px;
+}
+.visual .slideImg {
+    height: 100vh;
+    min-height: 600px;
+}
+.intersect {
+    display: flex;
+    margin-bottom: 100px;
+}
+.intersect .textWrap01 {
+    position: relative;
+    text-align: left;
+    margin-bottom: 100px;
+}
+.intersect .textWrap01 p {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.41;
+    letter-spacing: -2px;
+    text-indent: -2px;
+}
+.intersect .textWrap01:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 70px;
+    height: 5px;
+    background-color: #ffd44a;
+}
+.intersect2 {
+    display: flex;
+    justify-content: flex-end;
+}
+.intersect2 .textWrap02 {
+    margin-bottom: 100px;
+}
+.intersect2 .textWrap02 p {
+    font-size: 18px;
+    line-height: 1.56;
+}
+.main {
+    display: flex;
+}
+.top {
+    position: fixed;
+    width: 100px; height: 100px;
+    right: 10px; bottom: 10px;
+    background-color: black;
+    border-radius: 50%;
+}
+.banner {
+    display: flex;
+    justify-content: space-between;
+}
+.banner .card {
+    width: 384px; height: 600px;
+    margin-bottom: 100px;
+}
+.banner .card .imgWrap {}
+.banner .card .imgWrap:hover img {
+    transform: translate(0, -10px) scale(1);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+.banner .card .cardText {
+    padding: 16px 20px;
+}
+.banner .card .cardText h3 {
+    margin-bottom: 10px;
+}
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+.sec1st {
+    /* background-color: skyblue; */
     height: 400px;
+    position: relative;
+    margin-bottom: 100px;
+}
+.sec1st .textWrap03 {
+    background-color: #ffd44a;
+    width: 1100px;
+    height: 300px;
+    padding: 80px;
+}
+.sec1st .textWrap03 h1 {
+    margin-bottom: 15px
+}
+.sec1st .img1 {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 600px;
+}
+section {
+    background-color: #f7f8f9;
+    display: block;
+    height: 800px;
+}
+.mainNotice .noticeArea {
+    position: relative;
+}
+.mainNotice .noticeArea .subArea {
+    position: relative;
+    padding-top: 150px;
+    text-align: left;
+}
+.mainNotice .subArea .title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.41;
+    letter-spacing: -2px;
+    text-indent: -2px;
+}
+.mainNotice .tabArea {
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+.mainNotice .tabArea button.on {
+    color: #1e1e1e;
+    background-color: #f0f1f2;
+}
+.mainNotice .tabArea button {
+    display: inline-block;
+    height: 38px;
+    margin-left: 8px;
+    padding: 0 24px;
+    border-radius: 19px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 38px;
+    border: none;
+}
+.subArea .title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 70px;
+    height: 5px;
+    background-color: #ffd44a;
+}
+.ft {
+    background: black;
+    padding: 100px 0px;
+    height: 292px;
+}
+.ft .ftInner{
+    /* background-color: blue; */
+    margin: 0 auto;
+    width: 1280px;
+    color:white
+}
+.ft .ftInner .logo {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 26px;
+}
+.ft .ftInner .copyright {
+    font-size: 11px;
+    color: rgba(225, 225, 225, 0.5);
 }
