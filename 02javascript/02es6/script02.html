@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="demo"></h2>
+    <script>
+        // Promise
+        const pro = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                resolve("Resolved");
+            }, 3000)
+        });
+
+        pro.then(function(value) {
+            console.log(value);
+            document.getElementById("demo").innerHTML = value;
+        });
+
+        const data = [];
+
+        async function getUser() {
+            try {
+                const response = await axios.get();
+            } catch (error) {
+            
+            }
+        };
+
+        getUser();
+    </script>
+</body>
+</html>

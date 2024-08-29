@@ -17,19 +17,20 @@
             -webkit-box-shadow: none;
             box-shadow: none;
             border: 0 none;
-            background: #fff;
+            background: transparent;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
     <header class="hd">
         <div class="container menuWrap"> <!-- 1360px -->
-            <h1 class="logo">logo</h1>
+            <img src="images/logo01.png" alt="" class="logo">
             <nav class="gnb">
                 <ul>
-                    <li><a href="#">menu</a></li>
-                    <li><a href="#">menu</a></li>
-                    <li><a href="#">menu</a></li>
+                    <li><a href="#">MENU</a></li>
+                    <li><a href="#">MENU</a></li>
+                    <li><a href="#">MENU</a></li>
                 </ul>
             </nav>
             <!-- <ul class="sns">
@@ -107,6 +108,28 @@
                 <button class="button">Button</button>
             </div>
         </div>
+        <div class="container contentBox">
+            <div class="slide2">
+                <div class="card">  <!-- 384 * 500 -->
+                    <div class="cardText">
+                        <h3><a href="#">Lorem ipsum dolor sit.</a></h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, nostrum.</p> 
+                    </div>
+                </div>
+                <div class="card">  <!-- 384 * 500 -->
+                    <div class="cardText">
+                        <h3>Lorem ipsum dolor sit.</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, nostrum.</p>
+                    </div>
+                </div>
+                <div class="card">  <!-- 384 * 500 -->
+                    <div class="cardText">
+                        <h3>Lorem ipsum dolor sit.</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, nostrum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <div class="top"></div>
     <footer class="ft">
@@ -122,6 +145,15 @@
             auto: true,
             pager: false,
             controls: false
+        });
+        $(".slide2").bxSlider({
+            slideWidth: 360,
+            slideMargin: 50,
+            pager: false,
+            controls: false,
+            minSlides: 3,
+            maxSlides: 3,
+            infiniteLoop: true
         });
     </script>
 </body>

@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+:root {
+    --primary-color-0: #aaa;
+    --primary-color-1: pink;
+    --primary-color-2: #eae9e9;
+    --test-shadow-1: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --shadow-1: rgba(0, 0, 0, 0.2);
+}
+.testWrap {
+    background-color: var(--primary-color-1);
+    box-shadow: 0 10px 10px var(--shadow-1);
+}
+.visualWrap {
+    background: url(../images/slider-bg.svg) no-repeat center;
+    background-size: cover;
+    margin-bottom: 50px;
+}
+.shadow {
+    box-shadow: 0 0 10px var(--shadow-1) !important;
+}
+.btnShadow {
+    box-shadow: 0 0 10px var(--shadow-1) !important;   
+}
+
+/* service */
+.conTitle {
+    position: relative;
+    display: inline-block;
+    /* background-color: skyblue; */
+    left: 50%;
+    transform: translateX(-50%)
+}
+.conTitle:after {
+    content: "";
+    display: block;
+
+    /* bottom line */
+    /* width: 100px;
+    height: 1px;
+    background-color: var(--primary-color-0);
+    margin: 10px auto; */
+
+    /* dot on left-top */
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color-1);
+    border-radius: 50%;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+}
+.service .card {
+    background-color: var(--primary-color-2);
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.service .card:hover {
+    transform: scale(1.05) translate(-20px, -20px);
+    box-shadow: 15px 15px 15px var(--shadow-1);
+}
+.service .card img {
+    height: 200px;
+}
+
+/* customer */
+.customer .item {
+    background-color: var(--primary-color-2);
+}
