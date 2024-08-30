@@ -7,20 +7,24 @@
     --test-shadow-1: 0 10px 30px rgba(0, 0, 0, 0.2);
     --shadow-1: rgba(0, 0, 0, 0.2);
 }
+ul, li {list-style: none; margin: 0; padding: 0}
+a:link, a:visited {text-decoration: none; color: black;}
 .testWrap {
     background-color: var(--primary-color-1);
     box-shadow: 0 10px 10px var(--shadow-1);
-}
-.visualWrap {
-    background: url(../images/slider-bg.svg) no-repeat center;
-    background-size: cover;
-    margin-bottom: 50px;
 }
 .shadow {
     box-shadow: 0 0 10px var(--shadow-1) !important;
 }
 .btnShadow {
     box-shadow: 0 0 10px var(--shadow-1) !important;   
+}
+
+/* visualWrap */
+.visualWrap {
+    background: url(../images/slider-bg.svg) no-repeat center;
+    background-size: cover;
+    margin-bottom: 50px;
 }
 
 /* service */
@@ -66,5 +70,17 @@
 
 /* customer */
 .customer .item {
+    background-color: var(--primary-color-2);
+}
+
+/* online */
+.online {
+    background: url(../images/contact-cover.jpg);
+    background-size: cover;
+    background-attachment: fixed; /* PC에서만 적용 */
+}
+
+/* footer */
+.footer {
     background-color: var(--primary-color-2);
 }
