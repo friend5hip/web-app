@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- header -->
     <nav class="header navbar navbar-expand-lg bg-body-tertiary shadow">
         <div class="container">
           <a class="navbar-brand" href="#">
@@ -37,6 +38,7 @@
           </div>
         </div>
     </nav>
+    <!-- visualWrap -->
     <div class="visualWrap">
         <div class="container py-5">
             <div class="row"> <!-- row는 flex 속성을 가짐 -->
@@ -51,6 +53,7 @@
             </div>
         </div>
     </div>
+    <!-- service -->
     <div class="container service py-5">
         <h2 class="text-center conTitle">SERVICE</h2>
         <p class="text-center mb-5">Lorem ipsum dolor sit amet.</p>
@@ -97,6 +100,7 @@
             </div>
         </div>
     </div>
+    <!-- customer -->
     <div class="container customer mb-5">
         <h2 class="text-center conTitle">CUSTOMER</h2>
         <p class="text-center mb-5">Lorem ipsum dolor sit amet.</p>
@@ -157,6 +161,7 @@
             </div>
         </div>
     </div>
+    <!-- portfolio -->
     <div class="container portfolio mb-5">
         <h2 class="text-center conTitle">PORTFOLIO</h2>
         <p class="text-center mb-3">Lorem ipsum dolor sit amet.</p>
@@ -194,7 +199,7 @@
                 </a>
             </div>
         </div>
-    
+    <!-- online -->
     </div>
     <div class="online py-5">
         <div class="container">
@@ -207,6 +212,7 @@
             </div>
         </div>
     </div>
+    <!-- footer -->
     <div class="footer">
         <div class="container py-5 px-5">
             <div class="row mb-5">
@@ -280,7 +286,7 @@
             </div>
         </div>
     </div>
-
+    <!-- script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -299,6 +305,7 @@
             }
         });
 
+        // Data filtering
         const btns = $(".portfolio .btn-group button");
         btns.click(function(){
             let i = $(this).index();
@@ -319,7 +326,8 @@
         window.onload = function(){
             $(".portfolio #btn").trigger("click");
         }
-    
+        
+        // Slider on visualWrap
         $('.owl-carousel').owlCarousel({
             loop:true,
             margin:10,
