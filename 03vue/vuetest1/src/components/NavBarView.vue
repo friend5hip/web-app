@@ -12,7 +12,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+   name: 'navBarView',
+};
 </script>
 
 <style lang="scss" scoped>
@@ -25,7 +27,7 @@ export default {};
       a {
          position: relative;
          display: block;
-         background: pink;
+         // background: pink;
          margin-right: 5px;
          font-weight: bold;
          padding: 16px 0;
