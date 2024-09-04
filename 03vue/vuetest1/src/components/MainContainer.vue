@@ -11,9 +11,9 @@
                <h4>{{ item.title }}</h4>
                <p>❤️ {{ item.num }}</p>
                <p>대여: {{ item.won }}</p>
-               <p>👍 {{ item.like }} <button v-on:click="$emit('increaseLike', i)">버튼</button></p>
+               <p>👍 {{ item.like }} <button @:click="$emit('increaseLike', i)">버튼</button></p>
             </div>
-            <div class="btn btn-primary" v-on:click="$emit('modalOpen', i)">상세보기</div>
+            <div class="btn btn-primary" @:click="$emit('modalOpen', i)">상세보기</div>
          </div>
       </div>
    </div>
@@ -77,9 +77,6 @@ export default {
          }
       }
    }
-}
-.mb-10 {
-   margin-bottom: 10px;
 }
 .btn {
    background: pink;
