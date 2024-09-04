@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const num = [1, 2, 3, 4, 5];
+      const fruit = ["apple", "banana"];
+      const numData = num.filter(function (item) {
+        return item == 3;
+      });
+      // const numData = num.filter((item) => item == 3);와 같은 방식으로도 선언할 수 있음
+      console.log(numData);
+
+      const numVal = fruit.includes("apple", 0);
+      console.log(numVal);
+    </script>
+  </body>
+</html>

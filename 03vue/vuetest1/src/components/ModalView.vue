@@ -47,7 +47,4 @@ export default {
       }
    }
 }
-.mb-10 {
-   margin-bottom: 10px;
-}
 </style>

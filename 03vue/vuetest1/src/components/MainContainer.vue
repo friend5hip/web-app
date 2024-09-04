@@ -29,17 +29,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-   width: 1000px;
-   margin: 0 auto;
-   @media screen and (max-width: 790px) {
-      max-width: 100%;
-      padding: 0 16px;
-   }
-   img {
-      display: block;
-   }
-}
 .cardWrap {
    display: flex;
    flex-wrap: wrap;

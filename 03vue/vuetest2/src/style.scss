@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: color;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 1380px;
+  margin: 0 auto;
+  position: relative;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+}
