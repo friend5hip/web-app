@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+// vue 3로 작성된 문법
 import { ref } from "vue";
 import ViewComp from "./components/ViewComp.vue";
 

@@ -16,7 +16,7 @@ const weatherData = ref({
   temp: 0,
   text: "text",
   location: "location",
-  city: "jeju",
+  city: "Ansan",
 });
 
 const getWeather = async () => {

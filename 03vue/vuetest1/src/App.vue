@@ -8,6 +8,7 @@
    <ModalView v-bind:data="data_temp" :isModal="isModal" :selectedNum="selectedNum" @closeModal="closeM" />
 </template>
 
+
 <script>
 import mdata from '@/assets/mdata';
 import NavBarView from './components/NavBarView.vue';
