@@ -1,10 +1,10 @@
 <template>
-  <SearchBarView @searchCity="searchCity" />
+  <SearchbarView />
   <WeatherView />
 </template>
 
 <script setup>
-import SearchBarView from "./SearchBarView.vue";
+import SearchbarView from "./SearchbarView.vue";
 import WeatherView from "./WeatherView.vue";
 </script>
 

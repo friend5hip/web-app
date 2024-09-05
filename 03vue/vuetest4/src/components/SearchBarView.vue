@@ -6,7 +6,13 @@
       @input="inputText = $event.target.value"
       placeholder="지역명을 입력하세요"
     />
-    <div class="sIcon" @click="emits('searchCity', inputText)">
+    <div
+      class="sIcon"
+      @click="
+        $store.commit('onSearchCity', inputText);
+        $store.dispatch('getWeather');
+      "
+    >
       <i class="fa-solid fa-magnifying-glass"></i>
     </div>
   </div>
@@ -16,8 +22,6 @@
 import { ref } from "vue";
 
 const inputText = ref("");
-
-const emits = defineEmits();
 </script>
 
 <style lang="scss" scoped>
