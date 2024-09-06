@@ -28,7 +28,10 @@
             <router-link to="/about" class="nav-link">ABOUT</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/portfolio" class="nav-link"
+            <router-link
+              to="/portfolio"
+              class="nav-link"
+              :class="{ active: $route.name === 'portfolioView' }"
               >PORTFOLIO</router-link
             >
           </li>
@@ -40,4 +43,8 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.router-link-active {
+  font-weight: bold;
+}
+</style>

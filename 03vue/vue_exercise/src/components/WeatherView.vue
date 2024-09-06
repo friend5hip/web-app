@@ -26,8 +26,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px;
   .weather-info {
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
   }
