@@ -6,29 +6,71 @@ export default createStore({
       {
         userid: "admin",
         password: "123",
-        username: "전우정",
+        username: "Kim",
         addr: "서울",
-        img: "test.jpg",
+        img: "https://picsum.photos/seed/1/100",
       },
       {
-        userid: "user1",
-        password: "123",
-        username: "홍길동",
+        userid: "apple",
+        password: "456",
+        username: "Lee",
         addr: "서울",
-        img: "test.jpg",
+        img: "https://picsum.photos/seed/2/100",
       },
       {
-        userid: "user2",
-        password: "123",
-        username: "홍길동",
+        userid: "banana",
+        password: "789",
+        username: "Park",
         addr: "서울",
-        img: "test.jpg",
+        img: "https://picsum.photos/seed/3/100",
       },
     ],
+    coords: {
+      moveLat: "0",
+      moveLon: "0",
+    },
+    isModal: false,
   },
   mutations: {
     addUser(state, payload) {
       state.userData.push(payload);
     },
+    updateUser(state, payload) {
+      const userIndex = state.userData.findIndex(
+        (user) => user.userid === payload.userid
+      );
+
+      if (userIndex !== -1) {
+        state.userData[userIndex].username = payload.username;
+        state.userData[userIndex].password = payload.password;
+        state.userData[userIndex].addr = payload.addr;
+        state.userData[userIndex].img = payload.img;
+        console.log("Updated User ID " + payload.userid);
+      } else {
+        alert("사용자가 없습니다.");
+        console.log("Update: User not found");
+      }
+    },
+    deleteUser(state, payload) {
+      const userIndex = state.userData.findIndex(
+        (user) => user.userid === payload
+      );
+
+      // 유저가 존재하면 splice로 해당 유저를 배열에서 삭제
+      state.userData.splice(userIndex, 1);
+      console.log("Deleted User ID " + payload);
+    },
+    openModal(state) {
+      state.isModal = true;
+    },
+    closeModal(state) {
+      state.isModal = false;
+    },
+    getCoords(state, payload1, payload2) {
+      state.coords.moveLat = payload1;
+      state.coords.moveLon = payload2;
+      console.log(payload1, payload2);
+    },
+    setAddr(state, payload1, payload2) {},
   },
 });

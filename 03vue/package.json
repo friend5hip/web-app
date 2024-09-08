@@ -1,9 +1,0 @@
-{
-  "devDependencies": {
-    "sass": "^1.78.0"
-  },
-  "dependencies": {
-    "vue-router": "^4.4.3",
-    "vuex": "^4.0.2"
-  }
-}

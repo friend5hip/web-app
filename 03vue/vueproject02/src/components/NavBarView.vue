@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-md bg-body-tertiary">
+  <nav class="navbar navbar-expand-md">
     <div class="container">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">LOGO</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -30,6 +30,13 @@
 <script setup></script>
 
 <style lang="scss" scoped>
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  .container {
+    color: white;
+  }
+}
 .router-link-active {
   font-weight: bold;
 }
