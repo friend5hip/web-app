@@ -12,3 +12,21 @@ body {
   margin: 0 auto;
   background-color: #707070;
 }
+
+.btn {
+  width: 100px;
+  padding: 10px;
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.btn.btn-primary {
+  background: blue;
+}
+
+.btn.btn-info {
+  background: green;
+}
