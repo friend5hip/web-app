@@ -11,29 +11,32 @@ export default createStore({
         img: "https://picsum.photos/seed/1/100",
       },
       {
-        userid: "apple",
+        userid: "Apple",
         password: "456",
         username: "Lee",
         addr: "서울",
         img: "https://picsum.photos/seed/2/100",
       },
       {
-        userid: "banana",
+        userid: "Banana",
         password: "789",
         username: "Park",
         addr: "서울",
         img: "https://picsum.photos/seed/3/100",
       },
     ],
+    selectedUser: null,
     coords: {
       moveLat: "0",
       moveLon: "0",
     },
-    isModal: false,
+    isMapModal: false,
+    isDetailModal: false,
   },
   mutations: {
     addUser(state, payload) {
       state.userData.push(payload);
+      console.log("User added: " + state.userData.userid);
     },
     updateUser(state, payload) {
       const userIndex = state.userData.findIndex(
@@ -60,17 +63,30 @@ export default createStore({
       state.userData.splice(userIndex, 1);
       console.log("Deleted User ID " + payload);
     },
-    openModal(state) {
-      state.isModal = true;
+    selectUser(state, user) {
+      state.selectedUser = user; // 선택된 유저를 저장
     },
-    closeModal(state) {
-      state.isModal = false;
+    openMapModal(state) {
+      state.isMapModal = true;
     },
-    getCoords(state, payload1, payload2) {
-      state.coords.moveLat = payload1;
-      state.coords.moveLon = payload2;
-      console.log(payload1, payload2);
+    openDetailModal(state) {
+      state.isDetailModal = true;
     },
-    setAddr(state, payload1, payload2) {},
+    closeDetailModal(state) {
+      state.isDetailModal = false;
+    },
+    closeMapModal(state) {
+      state.isMapModal = false;
+    },
+    updateLocation(state, payload) {
+      state.coords.moveLat = payload.lat;
+      state.coords.moveLon = payload.lon;
+      console.log(
+        "Selected Location: " +
+          state.coords.moveLat +
+          " " +
+          state.coords.moveLon
+      );
+    },
   },
 });

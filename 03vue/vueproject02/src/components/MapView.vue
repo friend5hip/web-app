@@ -6,10 +6,20 @@
       class="d-block justify-content-center align-items-center"
     ></div>
     <div class="d-flex justify-content-center mt-3 gap-2">
-      <div class="btn btn-danger" @click="$store.commit('closeModal')">
+      <div class="btn btn-danger" @click="$store.commit('closeMapModal')">
         닫기
       </div>
-      <div class="btn btn-dark" @click="$store.commit('setAddr')">선택</div>
+      <div
+        class="btn btn-dark"
+        @click="
+          $store.commit('updateLocation', { lat: latitude, lon: longitude }),
+            $store.commit('closeMapModal')
+        "
+      >
+        현재 좌표:
+        {{ latitude }}
+        {{ longitude }}
+      </div>
     </div>
   </div>
 </template>
@@ -17,12 +27,9 @@
 <script setup>
 import { onMounted } from "vue";
 import { ref } from "vue";
-import { useStore } from "vuex";
 
 const latitude = ref(0);
 const longitude = ref(0);
-
-const store = useStore();
 
 onMounted(() => {
   if (!("geolocation" in navigator)) {
@@ -65,14 +72,15 @@ onMounted(() => {
     marker.setMap(map);
 
     // 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
-    kakao.maps.event.addListener(map, "center_changed", function () {
+    kakao.maps.event.addListener(map, "click", function (mouseEvent) {
       // 지도의 중심좌표를 얻어옵니다
-      var latlng = map.getCenter();
+      var latlng = mouseEvent.latLng;
 
-      let lat = latlng.getLat();
-      let lon = latlng.getLng();
+      // 마커 위치를 클릭한 위치로 옮깁니다
+      marker.setPosition(latlng);
 
-      store.commit("getCoords", lat, lon);
+      latitude.value = latlng.getLat();
+      longitude.value = latlng.getLng();
     });
   };
 });
@@ -82,9 +90,6 @@ onMounted(() => {
 .mapModal {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3); // (r, g, b, opacity)
-  // opacity: 0.3;
-  // width: 100%;
-  // height: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -109,7 +114,7 @@ onMounted(() => {
       z-index: 999;
       border-radius: 50%;
       border: 2px solid white;
-      transform: translate(-50%, -50%); /* 정확히 중앙에 위치하도록 조정 */
+      transform: translate(-50%, -50%); // 정확히 중앙에 위치하도록 조정
       background-color: red;
     }
   }

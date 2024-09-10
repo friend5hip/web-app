@@ -12,8 +12,10 @@
         <UserSignView />
       </div>
     </div>
-    <div class="mapWrap" v-if="$store.state.isModal">
-      <h3 class="mb-3 fw-bold text-center">지도</h3>
+    <div class="detailWrap" v-if="$store.state.isDetailModal">
+      <UserDetailView />
+    </div>
+    <div class="mapWrap" v-if="$store.state.isMapModal">
       <MapView />
     </div>
   </div>
@@ -23,6 +25,9 @@
 import UserListView from "../components/UserListView.vue";
 import UserSignView from "../components/UserSignView.vue";
 import MapView from "../components/MapView.vue";
+import UserDetailView from "../components/UserDetailView.vue";
+
+const props = defineProps({});
 </script>
 
 <style lang="scss" scoped>

@@ -9,7 +9,13 @@
       <h5 class="mb-0">{{ item.userid }}</h5>
       <p class="mb-0">{{ item.username }}</p>
     </div>
-    <div class="d-flex align-items-center ms-auto">
+    <div class="d-flex align-items-center ms-auto gap-2">
+      <div
+        class="btn btn-dark d-flex justify-content-cetner p-2"
+        @click="selectUser(item)"
+      >
+        상세
+      </div>
       <div
         class="btn btn-danger d-flex justify-content-center p-2"
         @click="deleteUser(item.userid)"
@@ -27,6 +33,10 @@ const store = useStore();
 
 const deleteUser = (userid) => {
   store.commit("deleteUser", userid);
+};
+const selectUser = (user) => {
+  store.commit("selectUser", user);
+  store.commit("openDetailModal");
 };
 </script>
 

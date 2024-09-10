@@ -43,9 +43,13 @@
   <div class="d-flex justify-content-center gap-3">
     <div class="btn btn-dark" @click="addUser">등록</div>
     <div class="btn btn-dark" @click="updateUser">수정</div>
-    <div class="btn btn-dark" @click="$store.commit('openModal')">
+    <div class="btn btn-dark" @click="$store.commit('openMapModal')">
       주소 선택
     </div>
+  </div>
+  <div class="coordsWrap d-flex justify-content-center mt-3 fw-bold">
+    선택한 좌표: {{ $store.state.coords.moveLat }} /
+    {{ $store.state.coords.moveLon }}
   </div>
 </template>
 
@@ -54,6 +58,7 @@ import { ref } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
+
 const userdata = ref({
   userid: null,
   password: null,
@@ -64,44 +69,28 @@ const userdata = ref({
 
 const addUser = () => {
   // 필드의 값이 모두 유효한지 확인
-  if (
-    Object.values(userdata.value).every(
-      (value) => value !== null && value.trim() !== ""
-    )
-  ) {
-    let uData = {
-      userid: userdata.value.userid,
-      password: userdata.value.password,
-      username: userdata.value.username,
-      addr: userdata.value.addr,
-      img: userdata.value.img,
-    };
-    store.commit("addUser", uData);
-    clearFoam();
-  } else {
-    alert("모든 정보를 입력해주세요.");
-  }
+  let uData = {
+    userid: userdata.value.userid,
+    password: userdata.value.password,
+    username: userdata.value.username,
+    addr: userdata.value.addr,
+    img: userdata.value.img,
+  };
+  store.commit("addUser", uData);
+  clearFoam();
 };
 
 const updateUser = () => {
   // 필드의 값이 모두 유효한지 확인
-  if (
-    Object.values(userdata.value).every(
-      (value) => value !== null && value.trim() !== ""
-    )
-  ) {
-    let uData = {
-      userid: userdata.value.userid,
-      password: userdata.value.password,
-      username: userdata.value.username,
-      addr: userdata.value.addr,
-      img: userdata.value.img,
-    };
-    store.commit("updateUser", uData);
-    clearFoam();
-  } else {
-    alert("모든 정보를 입력해주세요.");
-  }
+  let uData = {
+    userid: userdata.value.userid,
+    password: userdata.value.password,
+    username: userdata.value.username,
+    addr: userdata.value.addr,
+    img: userdata.value.img,
+  };
+  store.commit("updateUser", uData);
+  clearFoam();
 };
 
 const clearFoam = () => {
