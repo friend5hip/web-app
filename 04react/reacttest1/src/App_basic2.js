@@ -5,6 +5,7 @@ function App() {
   const [modal, setModal] = useState(false);
   const [title, setTitle] = useState("제목");
   const [input, setInput] = useState("");
+
   return (
     <>
       <div>{title}</div>
@@ -21,6 +22,7 @@ function App() {
           </div>
         );
       })}
+      <input type="text" name="username" value="test"></input>
       <input
         onChange={(e) => {
           setInput(e.target.value);
@@ -32,7 +34,7 @@ function App() {
           let copy = [...pro, input];
           copy.unshift(input); // 맨 앞 인덱스에 push
           setPro(copy);
-          setInput(" ");
+          setInput("");
         }}
       >
         과일 넣기
