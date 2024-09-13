@@ -2,61 +2,71 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 function App() {
-  const listCnt = 10;
-  const pagerCnt = 5;
-  const [data, setData] = useState([]);
-  const [totalPage, setTotalPage] = useState(1);
-  const [currentPage, setCurrentPage] = useState(1);
+  const listCnt = 15; // 한 페이지에 표시할 항목 수
+  const pagerCnt = 5; // 페이지 번호를 한 번에 보여줄 수
+  const [data, setData] = useState([]); // 현재 페이지의 데이터
+  const [totalpage, setTotalpage] = useState(1); // 전체 페이지 수
+  const [currentpage, setCurrentpage] = useState(1); // 현재 페이지 번호
 
-  const api = async () => {
-    await axios
-      .get("https://jsonplaceholder.typicode.com/posts?_limit=10")
+  const api = (page) => {
+    axios
+      .get(
+        `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${listCnt}`
+      )
       .then((res) => {
-        console.log(res.data);
-
         setData(res.data);
-        console.log("total data: " + res.data.length);
-
-        setTotalPage(res.data.length / listCnt);
-        console.log("total page: " + res.data.length / listCnt);
+        const totalItems = res.headers["x-total-count"]; // 전체 데이터 개수
+        setTotalpage(Math.ceil(totalItems / listCnt)); // 전체 페이지 수 계산
       });
   };
 
   useEffect(() => {
-    api();
-  }, []);
+    api(currentpage); // 처음 마운트될 때 현재 페이지 데이터 가져오기
+  }, [currentpage]); // currentpage가 바뀔 때마다 API 호출
 
   const pageViewNumber = () => {
     const pageNumbers = [];
-    const startPage = Math.floor(((currentPage - 1) / pagerCnt) * listCnt + 1);
-    const endPage = startPage + pagerCnt - 1;
+    const startPage = Math.floor(((currentpage - 1) / pagerCnt) * pagerCnt + 1);
+    const endPage = Math.min(startPage + pagerCnt - 1, totalpage);
 
     for (let i = startPage; i <= endPage; i++) {
       pageNumbers.push(
         <span
-          onClick={() => {
-            alert(i);
+          key={i}
+          onClick={() => setCurrentpage(i)}
+          style={{
+            cursor: "pointer",
+            margin: "0 5px",
+            color: currentpage === i ? "red" : "black",
           }}
         >
           {i}
         </span>
       );
-      <br></br>;
     }
+
     return pageNumbers;
   };
 
   return (
     <div>
+      <div>totalPage: {totalpage}</div>
+      {data.map((item, i) => (
+        <div key={i}>
+          {item.id}. {item.title}
+        </div>
+      ))}
+
       <div style={{ fontSize: "2em" }}>{pageViewNumber()}</div>
-      Total Page: {totalPage}
-      {data?.map((item, i) => {
-        return (
-          <div key={i}>
-            {item.userId}. {item.title}
-          </div>
-        );
-      })}
+      <div>
+        {currentpage > 1 && (
+          <button onClick={() => setCurrentpage(currentpage - 1)}>이전</button>
+        )}
+
+        {currentpage < totalpage && (
+          <button onClick={() => setCurrentpage(currentpage + 1)}>다음</button>
+        )}
+      </div>
     </div>
   );
 }
