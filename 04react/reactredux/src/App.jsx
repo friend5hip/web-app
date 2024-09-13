@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import { createStore } from "redux";
+
+const initData = {
+  val: 10,
+  title: "test",
+};
+
+const reducer = (state = initData, action) => {
+  console.log(state);
+  console.log(action);
+
+  if (action.type == "up") {
+    return { ...state, val: (state.val += action.payload) };
+  } else if (action.type == "down") {
+    return { ...state, val: (state.val -= action.payload) };
+  }
+  return state;
+};
+
+const store = createStore(reducer);
 
 function App() {
-  const [count, setCount] = useState(0)
+  return (
+    <Provider store={store}>
+      <div>test</div>
+      <Counter />
+    </Provider>
+  );
+}
+
+function Counter() {
+  // state 값 가져오기
+  // const counterVal = useSelector((state) => {
+  //   return state.val;
+  // });
+  const counterVal = useSelector((state) => state.val);
+  const titleVal = useSelector((state) => state.title);
+
+  // state 값 변경
+  const dispatch = useDispatch();
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {counterVal} / {titleVal}
+      <button
+        onClick={() => {
+          dispatch({ type: "up", payload: 1 });
+        }}
+      >
+        업
+      </button>
+      <button
+        onClick={() => {
+          dispatch({ type: "down", payload: 1 });
+        }}
+      >
+        다운
+      </button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
