@@ -1,5 +1,6 @@
 {
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }
+  },
+  "livePreview.defaultPreviewPath": "/05tododev/front/index.html"
 }

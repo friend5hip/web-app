@@ -3,8 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import todoRouter from "./todoRouter";
 
 const loading = <div className="bg-red-500">loading...</div>;
-const Main = lazy(() => import("../pages/MainComp"));
-const About = lazy(() => import("../pages/AboutComp"));
+const Main = lazy(() => import("../pages/MainPage"));
+const About = lazy(() => import("../pages/AboutPage"));
 const TodoIndex = lazy(() => import("../pages/todo/IndexPage"));
 
 const root = createBrowserRouter([

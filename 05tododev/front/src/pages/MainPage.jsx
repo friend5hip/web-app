@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "../layout/Layout";
 
-function AboutComp() {
+function MainPage() {
   return (
     <Layout>
-      <div>AboutComp</div>
+      <div>MainPage</div>
     </Layout>
   );
 }
 
-export default AboutComp;
+export default MainPage;
