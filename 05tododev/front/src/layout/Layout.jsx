@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function Layout({ children }) {
   return (
     <>
-      <nav className="bg-blue-200">
-        <div className="container mx-auto py-4 flex justify-between">
+      <nav className="bg-blue-300">
+        <div className="container mx-auto py-4 flex justify-between text-white">
           <h1>logo</h1>
           <ul className="flex gap-4">
             <li>
@@ -21,8 +21,8 @@ function Layout({ children }) {
         </div>
       </nav>
       <div className="container mx-auto py-4">{children}</div>
-      <footer className=" bg-gray-300">
-        <div className="container mx-auto py-4">footer</div>
+      <footer className=" bg-gray-500">
+        <div className="container mx-auto py-4 text-white">footer</div>
       </footer>
     </>
   );

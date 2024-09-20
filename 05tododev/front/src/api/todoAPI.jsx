@@ -16,10 +16,10 @@ export const getList = async (pageParams) => {
 
 export const getOne = async (tno) => {
   const res = await axios.get(`${prefix}/${tno}`);
-  return res;
+  return res.data;
 };
 
 export const postAdd = async (obj) => {
   const res = await axios.post(`${prefix}/`, obj);
-  return res;
+  return res.data;
 };

@@ -4,7 +4,7 @@ import ListComp from "../../components/todo/ListComp";
 function ListPage() {
   return (
     <div>
-      <h3 className="text-2-xl py-3 text-end">글 리스트</h3>
+      <h3 className="text-2-xl py-3 text-end">리스트</h3>
       <hr className="py-3" />
       <ListComp />
     </div>
