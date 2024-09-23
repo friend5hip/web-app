@@ -8,9 +8,8 @@ import {
 const getNum = (param, defaultVal) => {
   if (!param) {
     return defaultVal;
-  } else {
-    return parseInt(param);
   }
+  return parseInt(param);
 };
 
 const useCustomMove = () => {
@@ -26,7 +25,7 @@ const useCustomMove = () => {
     let queryStr = "";
     if (pageParam) {
       const pageNum = getNum(pageParam.page, 1);
-      const sizeNum = getNum(pageParam.size, 1);
+      const sizeNum = getNum(pageParam.size, 10);
       queryStr = createSearchParams({
         page: pageNum,
         size: sizeNum,
@@ -50,7 +49,29 @@ const useCustomMove = () => {
     });
   };
 
-  return { page, size, moveToList, moveToRead, refresh };
+  const moveToModify = (num) => {
+    navigate({
+      pathname: `../modify/${num}`,
+      search: queryDefault,
+    });
+  };
+
+  const moveToWrite = () => {
+    navigate({
+      pathname: `../add`,
+      search: queryDefault,
+    });
+  };
+
+  return {
+    page,
+    size,
+    refresh,
+    moveToList,
+    moveToRead,
+    moveToWrite,
+    moveToModify,
+  };
 };
 
 export default useCustomMove;

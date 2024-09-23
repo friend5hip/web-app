@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../layout/Layout";
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 function IndexPage() {
   const navigate = useNavigate();

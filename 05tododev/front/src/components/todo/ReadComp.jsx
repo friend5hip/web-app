@@ -13,7 +13,7 @@ const initState = {
 function ReadComp({ tno }) {
   const [todo, setTodo] = useState(initState);
 
-  const { moveToList } = useCustomMove();
+  const { moveToList, moveToModify } = useCustomMove();
 
   const makeDiv = (title, value) => (
     <div className="flex">
@@ -34,9 +34,15 @@ function ReadComp({ tno }) {
       {makeDiv("TITLE", todo.title)}
       {makeDiv("DATE", todo.dueDate)}
 
-      <div className="flex justify-center">
+      <div className="flex justify-center gap-4">
         <button
-          className="p-2 rounded bg-blue-200 text-white"
+          className="p-2 rounded bg-blue-300 text-white"
+          onClick={() => moveToModify(tno)}
+        >
+          수정
+        </button>
+        <button
+          className="p-2 rounded bg-blue-300 text-white"
           onClick={() => moveToList()}
         >
           목록

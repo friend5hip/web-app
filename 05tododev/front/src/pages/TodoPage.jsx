@@ -1,6 +1,6 @@
 import React from "react";
 
-function TodoComp() {
+function TodoPage() {
   return (
     <Layout>
       <div>MainPage</div>
@@ -8,4 +8,4 @@ function TodoComp() {
   );
 }
 
-export default TodoComp;
+export default TodoPage;
