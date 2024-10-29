@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { loginPostAsync, logout } from "../slices/loginSlice";
@@ -10,8 +11,8 @@ const useCustomLogin = () => {
 
   const isLogin = loginState.email ? true : false;
 
-  const doLogin = (loginParams) => {
-    const action = dispatch(loginPostAsync(loginParams));
+  const doLogin = async (loginParams) => {
+    const action = await dispatch(loginPostAsync(loginParams));
     return action.payload;
   };
 

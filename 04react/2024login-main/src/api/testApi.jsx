@@ -3,7 +3,7 @@ import { API_SERVER_HOST } from "./todoApi";
 
 const host = API_SERVER_HOST;
 
-const getTest = () => {
-  const res = jwtAxios.get(`${host}`);
+export const getTest = async () => {
+  const res = await jwtAxios.get(`${host}`);
   return res.data;
 };

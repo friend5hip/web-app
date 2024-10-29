@@ -10,7 +10,7 @@ function Layout({ children }) {
     <>
       <nav className="bg-blue-200 px-4">
         <div className="container mx-auto py-4 flex justify-between">
-          <h1>logo</h1>
+          <Link to="/">logo</Link>
           <ul className="flex gap-4">
             <li>
               <Link to="/">HOME</Link>
@@ -39,7 +39,7 @@ function Layout({ children }) {
       </nav>
       <div className="container mx-auto py-4 px-4">{children}</div>
       <footer className="bg-gray-100">
-        <div className="container mx-auto py-4 px-4">푸터영역</div>
+        <div className="container mx-auto py-4 px-4">Footer</div>
       </footer>
     </>
   );
