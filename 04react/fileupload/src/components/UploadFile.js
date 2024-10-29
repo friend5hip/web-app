@@ -36,6 +36,7 @@ function UploadFile({ handleImageUpload }) {
       toast.error("이미지 업로드 실패");
     }
   };
+
   return (
     <>
       <div>

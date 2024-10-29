@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <h2>사진첩</h2>
       <UploadFile handleImageUpload={handleImageUpload} />
-      <ImageList imgData={imgData}></ImageList>
+      <ImageList imgData={imgData} />
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
