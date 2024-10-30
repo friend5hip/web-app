@@ -3,6 +3,7 @@ import { loginPostAsync } from "../../slices/loginSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useCustomLogin from "../../hooks/useCustomLogin";
+import KakaoLoginComp from "./KakaoLoginComp";
 
 const initState = {
   email: "",
@@ -46,8 +47,8 @@ function LoginComp() {
           <div className="container mx-auto ">
             <div className="bg-gray-100 max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
               <div>
-                <h3 className="font-bold text-2xl">Welcome to Startup</h3>
-                <p className="text-gray-600 pt-2">Sign in to your account.</p>
+                <h3 className="font-bold text-2xl">환영합니다.</h3>
+                <p className="text-gray-600 pt-2">로그인하세요.</p>
               </div>
               <div className="flex flex-col">
                 <div className="bg-gray-200 mt-10 rounded pt-3 mb-5">
@@ -87,6 +88,7 @@ function LoginComp() {
                 >
                   Sign In
                 </button>
+                <KakaoLoginComp />
               </div>
             </div>
           </div>
